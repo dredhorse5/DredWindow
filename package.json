@@ -1,0 +1,12 @@
+{
+  "name": "com.dredhorse5.dredpack.UIWindow",
+  "version": "1.0.0",
+  "displayName": "DredWindow",
+  "description": "",
+  "unity": "2022.3.9f1",
+  "author": {
+    "name": "dredhorse5",
+    "email": "dima.titov18@gmail.com",
+    "url": ""
+  }
+}

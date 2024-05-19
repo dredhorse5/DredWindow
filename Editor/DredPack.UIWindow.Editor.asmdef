@@ -1,0 +1,16 @@
+{
+    "name": "DredPack.UIWindow.Editor",
+    "rootNamespace": "",
+    "references": [
+        "GUID:0c92b95d3c99b09439b008e16cf25e4a"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

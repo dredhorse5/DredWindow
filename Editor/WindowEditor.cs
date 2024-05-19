@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using DredPack.DredpackEditor;
 using DredPack.UIWindow;
 using DredPack.UIWindow.Tabs;
 using UnityEditor;
@@ -11,10 +10,34 @@ namespace DredPack.UIWindowEditor
 {
 
     [CustomEditor(typeof(Window)), CanEditMultipleObjects]
-    public class WindowEditor : DredInspectorEditor<Window>
+    public class WindowEditor : Editor
     {
         private static int currentWindowTab;
         [SerializeReference] private TabDrawer[] tabs;
+        
+        public Window T
+        {
+            get
+            {
+                if (_t == null)
+                    _t = (Window)target;
+                return _t;
+            }
+        }
+        
+        public Window[] Ts
+        {
+            get
+            {
+                Window[] targs = new Window[targets.Length];
+                for (var i = 0; i < targets.Length; i++)
+                {
+                    targs[i] = (Window)targets[i];
+                }
+                return targs;
+            }
+        }
+        private Window _t;
         public void InitTabsDrawers()
         {
             tabs = new TabDrawer[T.AllTabs.Count];
@@ -72,7 +95,13 @@ namespace DredPack.UIWindowEditor
         {
             serializedObject.Update();
 
-            DrawComponentHeader("Window - v4");
+            GUILayout.BeginVertical();
+            GUIStyle myStyle = new GUIStyle();
+            myStyle.fontSize = 25;
+            myStyle.fontStyle = FontStyle.Bold;
+            myStyle.normal.textColor =  Color.white;
+            GUILayout.Label("Window - v4", myStyle);
+            GUILayout.EndVertical();
             Tabs();
             if(T.AllTabs == null || T.AllTabs.Count == 0)
                 return;

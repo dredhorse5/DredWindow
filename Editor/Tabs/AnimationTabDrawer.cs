@@ -50,7 +50,11 @@ namespace DredPack.UIWindowEditor
                 EditorUtility.SetDirty(window.T);
             }
             
-            DredpackEditor.DredInspectorEditorTemplates.DrawLabel(window.T.Animation.CurrentOpenAnimationName);
+            var labelStyle = new GUIStyle();
+            labelStyle.fontStyle = FontStyle.Bold;
+            labelStyle.normal.textColor = Color.white;
+            labelStyle.fontSize = 15;
+            GUILayout.Label(window.T.Animation.CurrentOpenAnimationName,labelStyle);
             var anim = window.T.Animation.CurrentOpenAnimation;
             EditorGUILayout.Space(-20);
             SerializedProperty findPropertyRelative = tabProperty.FindPropertyRelative("_currentOpenAnimation");
@@ -87,7 +91,11 @@ namespace DredPack.UIWindowEditor
                 }
             }
             
-            DredpackEditor.DredInspectorEditorTemplates.DrawLabel(selectedDualMode == 1 ? window.T.Animation.CurrentCloseAnimationName : window.T.Animation.CurrentOpenAnimationName);
+            var labelStyle = new GUIStyle();
+            labelStyle.fontStyle = FontStyle.Bold;
+            labelStyle.normal.textColor = Color.white;
+            labelStyle.fontSize = 15;
+            GUILayout.Label(selectedDualMode == 1 ? window.T.Animation.CurrentCloseAnimationName : window.T.Animation.CurrentOpenAnimationName,labelStyle);
             var anim = window.T.Animation.CurrentOpenAnimation;
             var anim1 = window.T.Animation.CurrentCloseAnimation;
             EditorGUILayout.Space(-20); 

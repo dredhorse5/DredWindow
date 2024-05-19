@@ -34,16 +34,26 @@ namespace DredPack.UIWindowEditor
         {
             base.Draw();
 
-            window.DrawLabel(" Start");
+            Label(" Start");
             EditorGUILayout.PropertyField(startOpenProperty, true);
             EditorGUILayout.PropertyField(startCloseProperty, true);
             EditorGUILayout.PropertyField(startSwitchProperty, true);
-            window.DrawLabel(" End");
+            Label(" End");
             EditorGUILayout.PropertyField(endOpenProperty, true);
             EditorGUILayout.PropertyField(endCloseProperty, true);
             EditorGUILayout.PropertyField(endSwitchProperty, true);
-            window.DrawLabel(" State Changed");
+            Label(" State Changed");
             EditorGUILayout.PropertyField(stateChangedProperty, true);
+        }
+
+        private void Label(string _name)
+        {
+            
+            var labelStyle = new GUIStyle();
+            labelStyle.fontStyle = FontStyle.Bold;
+            labelStyle.normal.textColor = Color.white;
+            labelStyle.fontSize = 15;
+            GUILayout.Label(_name,labelStyle);
         }
     }
 }

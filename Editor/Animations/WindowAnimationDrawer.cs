@@ -1,6 +1,4 @@
-﻿using System.Reflection;
-using DredPack.UIWindow.Animations;
-using NaughtyAttributes.Test;
+﻿using DredPack.UIWindow.Animations;
 using UnityEditor;
 using UnityEngine;
 

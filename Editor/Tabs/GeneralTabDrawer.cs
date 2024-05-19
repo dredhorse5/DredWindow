@@ -65,7 +65,7 @@ namespace DredPack.UIWindowEditor
         {
             base.Draw();
 
-            window.DrawLabel(" States");
+            Label(" States");
 
             EditorGUILayout.LabelField("Current", currentStateProperty.enumDisplayNames[currentStateProperty.enumValueIndex]);
 
@@ -107,13 +107,13 @@ namespace DredPack.UIWindowEditor
             GUI.enabled = true;
 
 
-            window.DrawLabel(" Buttons");
+            Label(" Buttons");
             EditorGUILayout.PropertyField(closeButtonProperty, true);
             EditorGUILayout.PropertyField(openButtonProperty, true);
             EditorGUILayout.PropertyField(switchButtonProperty, true);
 
             
-            window.DrawLabel(" Some");
+            Label(" Some");
             
             EditorGUILayout.BeginHorizontal();
             EditorGUILayout.PropertyField(selectObjectOnOpenProperty);
@@ -186,6 +186,15 @@ namespace DredPack.UIWindowEditor
                 EditorGUILayout.LabelField("Do not activate because Canvas.renderMode must be Screen Space - Camera, and Camera must be attached", EditorStyles.helpBox);
             GUI.enabled = true;
             EditorGUILayout.EndHorizontal();
+        }
+        private void Label(string _name)
+        {
+            
+            var labelStyle = new GUIStyle();
+            labelStyle.fontStyle = FontStyle.Bold;
+            labelStyle.normal.textColor = Color.white;
+            labelStyle.fontSize = 15;
+            GUILayout.Label(_name,labelStyle);
         }
     }
 }
