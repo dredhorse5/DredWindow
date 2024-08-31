@@ -49,24 +49,6 @@ namespace DredPack.UIWindow
 
         public void FindAllTabs()
         { 
-            /*if(AllTabs != null)
-                AllTabs = AllTabs.FindAll(_ => _ != null);
-            Assembly[] assemblies = AppDomain.CurrentDomain.GetAssemblies(); 
-            List<Type> types = new List<Type>();
-            foreach (var ass in assemblies)
-                types.AddRange(ass.GetTypes());
-            List<Type> asddsa = new List<Type>();
-            foreach (var typee in types)
-            {
-                var isSubclassOf = typee.IsSubclassOf(typeof(WindowTab));
-                if(isSubclassOf)
-                    asddsa.Add(typee);
-            }
-            //var enumerable = typeof(WindowTab).Assembly.GetTypes().Where(t => t.IsSubclassOf(typeof(WindowTab))).ToList();
-            foreach (var ie in asddsa)
-                if (AllTabs.Find(_ => _.GetType() == ie) == null)
-                    AllTabs.Add((WindowTab)Activator.CreateInstance(ie));
-            AllTabs = AllTabs.OrderBy(_ => _.InspectorDrawSort).ToList(); */
             AllTabs = AllTabs.FindAll(_ => _ != null);
             foreach (var ie in RegisteredTabs)
                 if (AllTabs.Find(_ => _.GetType() == ie) == null)

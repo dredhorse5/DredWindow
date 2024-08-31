@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections;
+using System.Collections.Generic;
 using DredPack.UIWindow.Tabs;
+using UnityEngine;
 
 namespace DredPack.UIWindow.Animations
 {
