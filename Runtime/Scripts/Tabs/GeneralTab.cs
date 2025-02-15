@@ -131,7 +131,7 @@ namespace DredPack.UIWindow.Tabs
         {
             if (CloseOnOutsideClick && CurrentState == StatesRead.Opened && CanCloseOnOutsideClick)
             {
-                // Проверяем, было ли касание на экране
+                // Проверяем, было ли касание на  экране
                 if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
                     CheckWindow(Input.GetTouch(0).position);
                 else if (Input.GetMouseButtonUp(0))

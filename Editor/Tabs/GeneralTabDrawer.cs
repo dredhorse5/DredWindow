@@ -177,7 +177,7 @@ namespace DredPack.UIWindowEditor
             bool canCloseOnOutsideClick = window.T.Components.Canvas &&
                                           window.T.Components.Canvas.renderMode == RenderMode.ScreenSpaceCamera &&
                                           window.T.Components.Canvas.worldCamera;
-            GUI.enabled = canCloseOnOutsideClick;
+            //GUI.enabled = canCloseOnOutsideClick;
             EditorGUILayout.PropertyField(closeOnOutsideClickProperty, true);
             if (!canCloseOnOutsideClick)
                 EditorGUILayout.LabelField("Do not activate because Canvas.renderMode must be Screen Space - Camera, and Camera must be attached", EditorStyles.helpBox);
