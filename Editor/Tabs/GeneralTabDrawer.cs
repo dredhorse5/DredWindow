@@ -8,7 +8,6 @@ namespace DredPack.UIWindowEditor
 {
     public class GeneralTabDrawer : TabDrawer
     {
-        public override Type DrawerOfTab => typeof(DredPack.UIWindow.Tabs.GeneralTab);
         private SerializedProperty currentStateProperty;
         private SerializedProperty stateOnAwakeMethodProperty;
         private SerializedProperty stateOnAwakeProperty;
@@ -30,13 +29,11 @@ namespace DredPack.UIWindowEditor
         private SerializedProperty autoCloseProperty; 
         private SerializedProperty autoCloseDelayProperty; 
         private SerializedProperty selectObjectOnOpenProperty; 
-        private SerializedProperty selectableOnOpenProperty; 
+        private SerializedProperty selectableOnOpenProperty;
 
-       
 
-        public override void Init(WindowEditor window, SerializedProperty tabProperty)
+        public GeneralTabDrawer(WindowEditor window, SerializedProperty tabProperty) : base(window,tabProperty)
         {
-            base.Init(window, tabProperty);
             currentStateProperty = tabProperty.FindPropertyRelative("CurrentState");
             stateOnAwakeMethodProperty = tabProperty.FindPropertyRelative("StateOnAwakeMethod");
             stateOnAwakeProperty = tabProperty.FindPropertyRelative("StateOnAwake");

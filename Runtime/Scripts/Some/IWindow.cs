@@ -20,7 +20,7 @@ namespace DredPack.UIWindow
             
         public void Switch();
         public void Switch(string animName);
-        public void Switch(AnimationParameters parameters);
+        public void Switch(AnimationParameters parameters); 
         public Coroutine SwitchCor(string animName, AnimationParameters parameters);
             
             

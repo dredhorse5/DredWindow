@@ -12,13 +12,10 @@ namespace DredPack.UIWindowEditor
         int _selectedOpen = 0;
         int _selectedClose = 0;
         int selectedDualMode = 0;
-        public override Type DrawerOfTab => typeof(DredPack.UIWindow.Tabs.AnimationTab);
 
-       
 
-        public override void Init(WindowEditor window, SerializedProperty tabProperty)
+        public AnimationTabDrawer(WindowEditor window, SerializedProperty tabProperty) : base(window, tabProperty)
         {
-            base.Init(window, tabProperty);
             _selectedOpen = UIWindow.Tabs.AnimationTab.RegisteredAnimationsNames.IndexOf(window.T.Animation.CurrentOpenAnimationName);
             _selectedClose = UIWindow.Tabs.AnimationTab.RegisteredAnimationsNames.IndexOf(window.T.Animation.CurrentCloseAnimationName);
         }

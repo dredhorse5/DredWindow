@@ -11,10 +11,6 @@ namespace DredPack.UIWindow.Tabs
     [Serializable]
     public class EventsTab : WindowTab, IWindowCallback
     {
-        static EventsTab() => Window.RegisterTab(typeof(EventsTab));
-        
-        
-        public override int InspectorDrawSort => 100;
         public UnityEvent StartOpen;
         public UnityEvent StartClose;
         public UnityEvent<bool> StartSwitch;

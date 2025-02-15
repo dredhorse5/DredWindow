@@ -15,9 +15,9 @@ namespace DredPack.UIWindow
     [RequireComponent(typeof(CanvasGroup))]
     public sealed class Window : MonoBehaviour, IWindow, IWindowCallback
     {
-        [SerializeReference] public List<WindowTab> AllTabs = new List<WindowTab>();
-        public GeneralTab General => GetTab<GeneralTab>();
-        public AnimationTab Animation => GetTab<AnimationTab>();
+        public GeneralTab General = new GeneralTab();
+        public EventsTab Events = new EventsTab();
+        public AnimationTab Animation = new AnimationTab();
 
         public Components Components = new Components();
 
@@ -31,13 +31,8 @@ namespace DredPack.UIWindow
         
         private void Awake()
         {
-            FindAllTabs();
-            
-            AllTabs.ForEach(_ => _.Init(this));
-            
-            foreach (var tab in AllTabs)
-                if (tab is IWindowCallback callback)
-                    RegisterCallback(callback);
+            RegisterCallback(General);
+            RegisterCallback(Events);
             
             
             if(General.StateOnAwakeMethod == StatesAwakeMethod.Awake && !switchedOnce)
@@ -47,24 +42,6 @@ namespace DredPack.UIWindow
             }
         }
 
-        public void FindAllTabs()
-        { 
-            AllTabs = AllTabs.FindAll(_ => _ != null);
-            foreach (var ie in RegisteredTabs)
-                if (AllTabs.Find(_ => _.GetType() == ie) == null)
-                    AllTabs.Add((WindowTab)Activator.CreateInstance(ie));
-            AllTabs = AllTabs.OrderBy(_ => _.InspectorDrawSort).ToList();
-        }
-
-        private static List<Type> RegisteredTabs = new List<Type>();
-        public static void RegisterTab(Type tab)
-        {
-            RegisteredTabs.Add(tab);
-        }
-        public T GetTab<T>() where T : WindowTab
-        {
-            return AllTabs.Find(_ => _.GetType() == typeof(T)) as T;
-        }
 
         private void Start()
         {
@@ -311,7 +288,6 @@ namespace DredPack.UIWindow
 
         private void InitComponents()
         {
-            FindAllTabs(); 
             if(Components.DisableableObject == null)
                 Components.DisableableObject = gameObject;
             if(Components.SelectableOnOpen == null)

@@ -14,10 +14,6 @@ namespace DredPack.UIWindow.Tabs
     [Serializable]
     public class GeneralTab : WindowTab, IWindowCallback
     {
-        static GeneralTab() => Window.RegisterTab(typeof(GeneralTab));
-        
-        
-        public override int InspectorDrawSort => 0;
         public StatesRead CurrentState = StatesRead.Closed;
         public StatesAwakeMethod StateOnAwakeMethod;
         public string AnimationOnAwake = "Instantly";

@@ -13,9 +13,6 @@ namespace DredPack.UIWindow.Tabs
     [Serializable]
     public class AnimationTab : WindowTab
     {
-        static AnimationTab() => Window.RegisterTab(typeof(AnimationTab));
-        public override int InspectorDrawSort => 200;
-
         public bool DualMode = false;
 
         public WindowAnimationModule LastPlayedAnimation;
