@@ -24,7 +24,7 @@ namespace DredPack.UIWindow.Animations
         public Directions OpenDirection = Directions.Right;
         public Directions CloseDirection = Directions.Right;
         public bool CustomReferenceTransform;
-        //[AllowNesting,ShowIf(nameof(CustomReferenceTransform))]
+        
         public RectTransform ReferenceTransform;
         public RectTransform Panel;
         [Space] 
@@ -36,7 +36,6 @@ namespace DredPack.UIWindow.Animations
         {
             base.Init(owner);
             Graphics.Init(owner);
-            
         }
 
         public override void OnInit(Window owner)

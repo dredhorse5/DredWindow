@@ -31,16 +31,6 @@ namespace DredPack.UIWindow
         Closing
     }
 
-    public enum StatesForChanged
-    {
-        StartOpen,
-        EndOpen,
-        StartClose,
-        EndClose,
-        StartSwitch,
-        EndSwitch
-    }
-
     public enum StatesAwake
     {
         Open,
@@ -57,31 +47,6 @@ namespace DredPack.UIWindow
 
     #endregion
 
-    #region StateChangedProperty
-
-
-
-
-    [Serializable]
-    public class StateChangedProperty
-    {
-        public StatesForChanged State;
-
-        public virtual void TryExecute(StatesForChanged state)
-        {
-            if (State == state)
-                Execute();
-        }
-
-        protected virtual void Execute()
-        {
-        }
-    }
-
-
-
-
-    #endregion
 
     //вызывать ли ивенты при старте
     //возможность задать направление анимации

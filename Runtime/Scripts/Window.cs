@@ -31,6 +31,8 @@ namespace DredPack.UIWindow
         
         private void Awake()
         {
+            General.Init(this);
+            Events.Init(this);
             RegisterCallback(General);
             RegisterCallback(Events);
             
@@ -162,7 +164,6 @@ namespace DredPack.UIWindow
             WindowAnimationModule curAnim = null;
             if(Animation.DualMode)
             {
-                
                 curAnim = Animation.GetCloseAnimation(string.IsNullOrEmpty(animName)
                     ? Animation.CurrentCloseAnimationName
                     : animName);

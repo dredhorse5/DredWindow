@@ -8,7 +8,7 @@ namespace DredPack.UIWindow
     [RequireComponent(typeof(Window))]
     public class WindowBehaviour : MonoBehaviour, IWindow, IWindowCallback
     {
-        public Window Window => _window ??= GetComponent<Window>(); private Window _window;
+        public Window Window;
 
         protected virtual void OnEnable()
         {

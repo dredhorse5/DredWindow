@@ -46,10 +46,6 @@ namespace DredPack.UIWindow.Tabs
 
         public bool CloseOnOutsideClick;
 
-        public bool CanCloseOnOutsideClick => (window.Components.Canvas &&
-                                               window.Components.Canvas.renderMode == RenderMode.ScreenSpaceCamera &&
-                                               window.Components.Canvas.worldCamera);
-
 
         public override void Init(Window owner)
         {
@@ -129,12 +125,12 @@ namespace DredPack.UIWindow.Tabs
 
         public void CheckOutsideClick()
         {
-            if (CloseOnOutsideClick && CurrentState == StatesRead.Opened && CanCloseOnOutsideClick)
+            if (CloseOnOutsideClick && CurrentState == StatesRead.Opened)
             {
                 // Проверяем, было ли касание на  экране
                 if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
                     CheckWindow(Input.GetTouch(0).position);
-                else if (Input.GetMouseButtonUp(0))
+                else if (Input.GetMouseButtonDown(0))
                     CheckWindow(Input.mousePosition);
 
                 void CheckWindow(Vector2 touchPosition)
