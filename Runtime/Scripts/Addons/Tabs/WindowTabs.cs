@@ -2,27 +2,24 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.Serialization;
 
 namespace DredPack.UIWindow.Addons.Tabs
 {
     public class WindowTabs : MonoBehaviour
     {
-        public bool SelectOnStart = false;
-        public int SelectOnStartIndex = -1;
-
-        public float WaitTime = 0;
+        public int SelectOnStart = -1;
         
         public List<Element> Elements;
         
         public UnityEvent<Element> SelectedEvent;
         public Element nowSelectedElement { get; set; }
 
-        private float lastSelectedTime = 0;
         protected virtual void Start()
         {
             Elements.ForEach(_ => _.Init(this));
-            if(SelectOnStart && SelectOnStartIndex >= 0)
-                Select(SelectOnStartIndex);
+            if(SelectOnStart >= 0)
+                Select(SelectOnStart);
         }
 
 
@@ -49,8 +46,6 @@ namespace DredPack.UIWindow.Addons.Tabs
                 return;
             if(!CanSelect(element))
                 return;
-            if((Time.realtimeSinceStartup - lastSelectedTime) < WaitTime)
-                return;
             
             if(nowSelectedElement != element)
                 nowSelectedElement?.OnSelect(false);
@@ -59,7 +54,6 @@ namespace DredPack.UIWindow.Addons.Tabs
             
             SelectedEvent?.Invoke(nowSelectedElement);
             OnSelected(nowSelectedElement);
-            lastSelectedTime = Time.realtimeSinceStartup;
         }
         
         protected virtual bool CanSelect(Element element) => true; 

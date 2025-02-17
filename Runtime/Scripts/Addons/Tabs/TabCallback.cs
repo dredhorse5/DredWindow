@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using DredPack.UIWindow.TNRD.Autohook;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
@@ -8,6 +9,7 @@ namespace DredPack.UIWindow.Addons.Tabs
 {
     public class TabCallback : MonoBehaviour, ITabCallback
     {
+        [AutoHook]
         public WindowTabs WindowTabs;
         public int ElementIndex = 0;
         
