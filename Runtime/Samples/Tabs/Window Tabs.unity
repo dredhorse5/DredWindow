@@ -38,7 +38,6 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -286,6 +285,8 @@ GameObject:
   - component: {fileID: 23392511}
   - component: {fileID: 23392515}
   - component: {fileID: 23392514}
+  - component: {fileID: 23392517}
+  - component: {fileID: 23392516}
   m_Layer: 5
   m_Name: Window1
   m_TagString: Untagged
@@ -365,16 +366,67 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f417b7c71bee8864aaaa1084b82741ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AllTabs:
-  - rid: 1524971439749595149
-  - rid: 1524971439749595150
-  - rid: 1524971439749595151
-  - rid: 1524971439749595152
+  General:
+    window: {fileID: 0}
+    CurrentState: 0
+    StateOnAwakeMethod: 3
+    AnimationOnAwake: Instantly
+    StateOnAwake: 0
+    CloseButton: {fileID: 0}
+    OpenButton: {fileID: 0}
+    SwitchButton: {fileID: 0}
+    SelectObjectOnOpen: 0
+    AutoClose: 0
+    AutoCloseDelay: 2
+    Disableable: 0
+    EnableableCanvas: 0
+    EnableableRaycaster: 1
+    EnableableCanvasGroupInteractable: 1
+    EnableableCanvasGroupRaycasts: 1
+    CloseIfAnyWindowOpen: 0
+    CloseIfAnyWindowOpenType: 0
+    CloseOnOutsideClick: 0
+  Events:
+    window: {fileID: 0}
+    StartOpen:
+      m_PersistentCalls:
+        m_Calls: []
+    StartClose:
+      m_PersistentCalls:
+        m_Calls: []
+    StartSwitch:
+      m_PersistentCalls:
+        m_Calls: []
+    EndOpen:
+      m_PersistentCalls:
+        m_Calls: []
+    EndClose:
+      m_PersistentCalls:
+        m_Calls: []
+    EndSwitch:
+      m_PersistentCalls:
+        m_Calls: []
+    StateChanged:
+      m_PersistentCalls:
+        m_Calls: []
+  Animation:
+    window: {fileID: 0}
+    DualMode: 0
+    _currentOpenAnimationName: Fade
+    _currentOpenAnimation:
+      rid: 3854344985804013576
+    createdOpenAnimations:
+    - rid: 3854344985804013576
+    - rid: 3854344985804013579
+    _currentCloseAnimationName: Fade
+    _currentCloseAnimation:
+      rid: -2
+    createdCloseAnimations: []
   Components:
     DisableableObject: {fileID: 23392509}
     Canvas: {fileID: 23392513}
     Raycaster: {fileID: 23392511}
-    BackgroundImage: {fileID: 0}
+    BackgroundImage: {fileID: 23392516}
     CanvasGroup: {fileID: 23392515}
     SelectableOnOpen: {fileID: 0}
   references:
@@ -382,85 +434,10 @@ MonoBehaviour:
     RefIds:
     - rid: -2
       type: {class: , ns: , asm: }
-    - rid: 1524971439749595149
-      type: {class: GeneralTab, ns: DredPack.UIWindow.Tabs, asm: DredPack.UIWindow}
-      data:
-        window: {fileID: 0}
-        CurrentState: 2
-        StateOnAwakeMethod: 0
-        AnimationOnAwake: Instantly
-        StateOnAwake: 1
-        CloseButton: {fileID: 0}
-        OpenButton: {fileID: 0}
-        SwitchButton: {fileID: 0}
-        SelectObjectOnOpen: 0
-        AutoClose: 0
-        AutoCloseDelay: 2
-        Disableable: 0
-        EnableableCanvas: 0
-        EnableableRaycaster: 1
-        EnableableCanvasGroupInteractable: 1
-        EnableableCanvasGroupRaycasts: 1
-        CloseIfAnyWindowOpen: 0
-        CloseIfAnyWindowOpenType: 0
-        CloseOnOutsideClick: 0
-    - rid: 1524971439749595150
-      type: {class: EventsTab, ns: DredPack.UIWindow.Tabs, asm: DredPack.UIWindow}
-      data:
-        window: {fileID: 0}
-        StartOpen:
-          m_PersistentCalls:
-            m_Calls: []
-        StartClose:
-          m_PersistentCalls:
-            m_Calls: []
-        StartSwitch:
-          m_PersistentCalls:
-            m_Calls: []
-        EndOpen:
-          m_PersistentCalls:
-            m_Calls: []
-        EndClose:
-          m_PersistentCalls:
-            m_Calls: []
-        EndSwitch:
-          m_PersistentCalls:
-            m_Calls: []
-        StateChanged:
-          m_PersistentCalls:
-            m_Calls: []
-    - rid: 1524971439749595151
-      type: {class: AudioTab, ns: DredPack.UIWindow.Tabs, asm: DredPack}
-      data:
-        window: {fileID: 0}
-        List: []
-    - rid: 1524971439749595152
-      type: {class: AnimationTab, ns: DredPack.UIWindow.Tabs, asm: DredPack.UIWindow}
-      data:
-        window: {fileID: 0}
-        DualMode: 0
-        _currentOpenAnimationName: Instantly
-        _currentOpenAnimation:
-          rid: 1524971439749595153
-        createdOpenAnimations:
-        - rid: 1524971439749595153
-        - rid: 1524971439749595157
-        - rid: 1524971439749595163
-        _currentCloseAnimationName: Fade
-        _currentCloseAnimation:
-          rid: -2
-        createdCloseAnimations: []
-    - rid: 1524971439749595153
-      type: {class: Instantly, ns: DredPack.UIWindow.Animations, asm: DredPack.UIWindow}
-      data:
-        Speed: 1
-        SwitchDelay:
-          Open: 0
-          Close: 0
-    - rid: 1524971439749595157
+    - rid: 3854344985804013576
       type: {class: Fade, ns: DredPack.UIWindow.Animations, asm: DredPack.UIWindow}
       data:
-        Speed: 4
+        Speed: 8
         SwitchDelay:
           Open: 0
           Close: 0
@@ -488,93 +465,13 @@ MonoBehaviour:
           m_PreInfinity: 2
           m_PostInfinity: 2
           m_RotationOrder: 4
-    - rid: 1524971439749595163
-      type: {class: SideAppearOnePanel, ns: DredPack.UIWindow.Animations, asm: DredPack.UIWindow}
+    - rid: 3854344985804013579
+      type: {class: Instantly, ns: DredPack.UIWindow.Animations, asm: DredPack.UIWindow}
       data:
-        Speed: 3
+        Speed: 1
         SwitchDelay:
           Open: 0
           Close: 0
-        OpenCurve:
-          serializedVersion: 2
-          m_Curve:
-          - serializedVersion: 3
-            time: 0
-            value: 0
-            inSlope: 2.821449
-            outSlope: 2.821449
-            tangentMode: 0
-            weightedMode: 0
-            inWeight: 0
-            outWeight: 0.03821656
-          - serializedVersion: 3
-            time: 1
-            value: 1
-            inSlope: 0
-            outSlope: 0
-            tangentMode: 0
-            weightedMode: 0
-            inWeight: 0
-            outWeight: 0
-          m_PreInfinity: 2
-          m_PostInfinity: 2
-          m_RotationOrder: 4
-        CloseCurve:
-          serializedVersion: 2
-          m_Curve:
-          - serializedVersion: 3
-            time: 0
-            value: 0
-            inSlope: 2.821449
-            outSlope: 2.821449
-            tangentMode: 0
-            weightedMode: 0
-            inWeight: 0
-            outWeight: 0.03821656
-          - serializedVersion: 3
-            time: 1
-            value: 1
-            inSlope: 0
-            outSlope: 0
-            tangentMode: 0
-            weightedMode: 0
-            inWeight: 0
-            outWeight: 0
-          m_PreInfinity: 2
-          m_PostInfinity: 2
-          m_RotationOrder: 4
-        OpenDirection: 1
-        CloseDirection: 0
-        CustomReferenceTransform: 0
-        ReferenceTransform: {fileID: 0}
-        Panel: {fileID: 276101072}
-        Graphics:
-          Curve:
-            serializedVersion: 2
-            m_Curve:
-            - serializedVersion: 3
-              time: 0
-              value: 0
-              inSlope: 0
-              outSlope: 0
-              tangentMode: 0
-              weightedMode: 0
-              inWeight: 0
-              outWeight: 0
-            - serializedVersion: 3
-              time: 1
-              value: 1
-              inSlope: 0
-              outSlope: 0
-              tangentMode: 0
-              weightedMode: 0
-              inWeight: 0
-              outWeight: 0
-            m_PreInfinity: 2
-            m_PostInfinity: 2
-            m_RotationOrder: 4
-          Graphics: []
-          CanvasGroups: []
 --- !u!225 &23392515
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -583,10 +480,48 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 23392509}
   m_Enabled: 1
-  m_Alpha: 0
+  m_Alpha: 1
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!114 &23392516
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 23392509}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &23392517
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 23392509}
+  m_CullTransparentMesh: 1
 --- !u!1 &35289066
 GameObject:
   m_ObjectHideFlags: 0
@@ -2365,38 +2300,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_RenderShadows: 1
-  m_RequiresDepthTextureOption: 2
-  m_RequiresOpaqueTextureOption: 2
-  m_CameraType: 0
-  m_Cameras: []
-  m_RendererIndex: -1
-  m_VolumeLayerMask:
-    serializedVersion: 2
-    m_Bits: 1
-  m_VolumeTrigger: {fileID: 0}
-  m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 0
-  m_Antialiasing: 0
-  m_AntialiasingQuality: 2
-  m_StopNaN: 0
-  m_Dithering: 0
-  m_ClearDepth: 1
-  m_AllowXRRendering: 1
-  m_AllowHDROutput: 1
-  m_UseScreenCoordOverride: 0
-  m_ScreenSizeOverride: {x: 0, y: 0, z: 0, w: 0}
-  m_ScreenCoordScaleBias: {x: 0, y: 0, z: 0, w: 0}
-  m_RequiresDepthTexture: 0
-  m_RequiresColorTexture: 0
-  m_Version: 2
-  m_TaaSettings:
-    quality: 3
-    frameInfluence: 0.1
-    jitterScale: 1
-    mipBias: 0
-    varianceClampScale: 0.9
-    contrastAdaptiveSharpening: 0
 --- !u!1 &269806774
 GameObject:
   m_ObjectHideFlags: 0
@@ -2693,11 +2596,60 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f417b7c71bee8864aaaa1084b82741ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AllTabs:
-  - rid: 1524971439749595144
-  - rid: 1524971439749595145
-  - rid: 1524971439749595146
-  - rid: 1524971439749595147
+  General:
+    window: {fileID: 0}
+    CurrentState: 2
+    StateOnAwakeMethod: 0
+    AnimationOnAwake: Instantly
+    StateOnAwake: 0
+    CloseButton: {fileID: 0}
+    OpenButton: {fileID: 0}
+    SwitchButton: {fileID: 0}
+    SelectObjectOnOpen: 0
+    AutoClose: 0
+    AutoCloseDelay: 2
+    Disableable: 0
+    EnableableCanvas: 0
+    EnableableRaycaster: 1
+    EnableableCanvasGroupInteractable: 1
+    EnableableCanvasGroupRaycasts: 1
+    CloseIfAnyWindowOpen: 0
+    CloseIfAnyWindowOpenType: 0
+    CloseOnOutsideClick: 0
+  Events:
+    window: {fileID: 0}
+    StartOpen:
+      m_PersistentCalls:
+        m_Calls: []
+    StartClose:
+      m_PersistentCalls:
+        m_Calls: []
+    StartSwitch:
+      m_PersistentCalls:
+        m_Calls: []
+    EndOpen:
+      m_PersistentCalls:
+        m_Calls: []
+    EndClose:
+      m_PersistentCalls:
+        m_Calls: []
+    EndSwitch:
+      m_PersistentCalls:
+        m_Calls: []
+    StateChanged:
+      m_PersistentCalls:
+        m_Calls: []
+  Animation:
+    window: {fileID: 0}
+    DualMode: 0
+    _currentOpenAnimationName: 
+    _currentOpenAnimation:
+      rid: -2
+    createdOpenAnimations: []
+    _currentCloseAnimationName: 
+    _currentCloseAnimation:
+      rid: -2
+    createdCloseAnimations: []
   Components:
     DisableableObject: {fileID: 302188734}
     Canvas: {fileID: 302188737}
@@ -2710,103 +2662,6 @@ MonoBehaviour:
     RefIds:
     - rid: -2
       type: {class: , ns: , asm: }
-    - rid: 1524971439749595144
-      type: {class: GeneralTab, ns: DredPack.UIWindow.Tabs, asm: DredPack.UIWindow}
-      data:
-        window: {fileID: 0}
-        CurrentState: 2
-        StateOnAwakeMethod: 0
-        AnimationOnAwake: Instantly
-        StateOnAwake: 0
-        CloseButton: {fileID: 0}
-        OpenButton: {fileID: 0}
-        SwitchButton: {fileID: 0}
-        SelectObjectOnOpen: 0
-        AutoClose: 0
-        AutoCloseDelay: 2
-        Disableable: 0
-        EnableableCanvas: 0
-        EnableableRaycaster: 1
-        EnableableCanvasGroupInteractable: 1
-        EnableableCanvasGroupRaycasts: 1
-        CloseIfAnyWindowOpen: 0
-        CloseIfAnyWindowOpenType: 0
-        CloseOnOutsideClick: 0
-    - rid: 1524971439749595145
-      type: {class: EventsTab, ns: DredPack.UIWindow.Tabs, asm: DredPack.UIWindow}
-      data:
-        window: {fileID: 0}
-        StartOpen:
-          m_PersistentCalls:
-            m_Calls: []
-        StartClose:
-          m_PersistentCalls:
-            m_Calls: []
-        StartSwitch:
-          m_PersistentCalls:
-            m_Calls: []
-        EndOpen:
-          m_PersistentCalls:
-            m_Calls: []
-        EndClose:
-          m_PersistentCalls:
-            m_Calls: []
-        EndSwitch:
-          m_PersistentCalls:
-            m_Calls: []
-        StateChanged:
-          m_PersistentCalls:
-            m_Calls: []
-    - rid: 1524971439749595146
-      type: {class: AudioTab, ns: DredPack.UIWindow.Tabs, asm: DredPack}
-      data:
-        window: {fileID: 0}
-        List: []
-    - rid: 1524971439749595147
-      type: {class: AnimationTab, ns: DredPack.UIWindow.Tabs, asm: DredPack.UIWindow}
-      data:
-        window: {fileID: 0}
-        DualMode: 0
-        _currentOpenAnimationName: Fade
-        _currentOpenAnimation:
-          rid: 1524971439749595148
-        createdOpenAnimations:
-        - rid: 1524971439749595148
-        _currentCloseAnimationName: Fade
-        _currentCloseAnimation:
-          rid: -2
-        createdCloseAnimations: []
-    - rid: 1524971439749595148
-      type: {class: Fade, ns: DredPack.UIWindow.Animations, asm: DredPack.UIWindow}
-      data:
-        Speed: 1
-        SwitchDelay:
-          Open: 0
-          Close: 0
-        Curve:
-          serializedVersion: 2
-          m_Curve:
-          - serializedVersion: 3
-            time: 0
-            value: 0
-            inSlope: 0
-            outSlope: 0
-            tangentMode: 0
-            weightedMode: 0
-            inWeight: 0
-            outWeight: 0
-          - serializedVersion: 3
-            time: 1
-            value: 1
-            inSlope: 0
-            outSlope: 0
-            tangentMode: 0
-            weightedMode: 0
-            inWeight: 0
-            outWeight: 0
-          m_PreInfinity: 2
-          m_PostInfinity: 2
-          m_RotationOrder: 4
 --- !u!225 &302188740
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -5576,6 +5431,8 @@ GameObject:
   - component: {fileID: 736352972}
   - component: {fileID: 736352971}
   - component: {fileID: 736352970}
+  - component: {fileID: 736352975}
+  - component: {fileID: 736352974}
   m_Layer: 5
   m_Name: Window2
   m_TagString: Untagged
@@ -5615,16 +5472,67 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f417b7c71bee8864aaaa1084b82741ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AllTabs:
-  - rid: 1524971439749595149
-  - rid: 1524971439749595150
-  - rid: 1524971439749595151
-  - rid: 1524971439749595152
+  General:
+    window: {fileID: 0}
+    CurrentState: 2
+    StateOnAwakeMethod: 3
+    AnimationOnAwake: Instantly
+    StateOnAwake: 0
+    CloseButton: {fileID: 0}
+    OpenButton: {fileID: 0}
+    SwitchButton: {fileID: 0}
+    SelectObjectOnOpen: 0
+    AutoClose: 0
+    AutoCloseDelay: 2
+    Disableable: 0
+    EnableableCanvas: 0
+    EnableableRaycaster: 1
+    EnableableCanvasGroupInteractable: 1
+    EnableableCanvasGroupRaycasts: 1
+    CloseIfAnyWindowOpen: 0
+    CloseIfAnyWindowOpenType: 0
+    CloseOnOutsideClick: 0
+  Events:
+    window: {fileID: 0}
+    StartOpen:
+      m_PersistentCalls:
+        m_Calls: []
+    StartClose:
+      m_PersistentCalls:
+        m_Calls: []
+    StartSwitch:
+      m_PersistentCalls:
+        m_Calls: []
+    EndOpen:
+      m_PersistentCalls:
+        m_Calls: []
+    EndClose:
+      m_PersistentCalls:
+        m_Calls: []
+    EndSwitch:
+      m_PersistentCalls:
+        m_Calls: []
+    StateChanged:
+      m_PersistentCalls:
+        m_Calls: []
+  Animation:
+    window: {fileID: 0}
+    DualMode: 0
+    _currentOpenAnimationName: Fade
+    _currentOpenAnimation:
+      rid: 3854344985804013575
+    createdOpenAnimations:
+    - rid: 3854344985804013575
+    - rid: 3854344985804013580
+    _currentCloseAnimationName: Fade
+    _currentCloseAnimation:
+      rid: -2
+    createdCloseAnimations: []
   Components:
     DisableableObject: {fileID: 736352968}
     Canvas: {fileID: 736352973}
     Raycaster: {fileID: 736352972}
-    BackgroundImage: {fileID: 0}
+    BackgroundImage: {fileID: 736352974}
     CanvasGroup: {fileID: 736352971}
     SelectableOnOpen: {fileID: 0}
   references:
@@ -5632,85 +5540,10 @@ MonoBehaviour:
     RefIds:
     - rid: -2
       type: {class: , ns: , asm: }
-    - rid: 1524971439749595149
-      type: {class: GeneralTab, ns: DredPack.UIWindow.Tabs, asm: DredPack.UIWindow}
-      data:
-        window: {fileID: 0}
-        CurrentState: 2
-        StateOnAwakeMethod: 0
-        AnimationOnAwake: Instantly
-        StateOnAwake: 1
-        CloseButton: {fileID: 0}
-        OpenButton: {fileID: 0}
-        SwitchButton: {fileID: 0}
-        SelectObjectOnOpen: 0
-        AutoClose: 0
-        AutoCloseDelay: 2
-        Disableable: 0
-        EnableableCanvas: 0
-        EnableableRaycaster: 1
-        EnableableCanvasGroupInteractable: 1
-        EnableableCanvasGroupRaycasts: 1
-        CloseIfAnyWindowOpen: 0
-        CloseIfAnyWindowOpenType: 0
-        CloseOnOutsideClick: 0
-    - rid: 1524971439749595150
-      type: {class: EventsTab, ns: DredPack.UIWindow.Tabs, asm: DredPack.UIWindow}
-      data:
-        window: {fileID: 0}
-        StartOpen:
-          m_PersistentCalls:
-            m_Calls: []
-        StartClose:
-          m_PersistentCalls:
-            m_Calls: []
-        StartSwitch:
-          m_PersistentCalls:
-            m_Calls: []
-        EndOpen:
-          m_PersistentCalls:
-            m_Calls: []
-        EndClose:
-          m_PersistentCalls:
-            m_Calls: []
-        EndSwitch:
-          m_PersistentCalls:
-            m_Calls: []
-        StateChanged:
-          m_PersistentCalls:
-            m_Calls: []
-    - rid: 1524971439749595151
-      type: {class: AudioTab, ns: DredPack.UIWindow.Tabs, asm: DredPack}
-      data:
-        window: {fileID: 0}
-        List: []
-    - rid: 1524971439749595152
-      type: {class: AnimationTab, ns: DredPack.UIWindow.Tabs, asm: DredPack.UIWindow}
-      data:
-        window: {fileID: 0}
-        DualMode: 0
-        _currentOpenAnimationName: Instantly
-        _currentOpenAnimation:
-          rid: 1524971439749595154
-        createdOpenAnimations:
-        - rid: 1524971439749595154
-        - rid: 1524971439749595158
-        - rid: 1524971439749595162
-        _currentCloseAnimationName: Fade
-        _currentCloseAnimation:
-          rid: -2
-        createdCloseAnimations: []
-    - rid: 1524971439749595154
-      type: {class: Instantly, ns: DredPack.UIWindow.Animations, asm: DredPack.UIWindow}
-      data:
-        Speed: 1
-        SwitchDelay:
-          Open: 0
-          Close: 0
-    - rid: 1524971439749595158
+    - rid: 3854344985804013575
       type: {class: Fade, ns: DredPack.UIWindow.Animations, asm: DredPack.UIWindow}
       data:
-        Speed: 4
+        Speed: 8
         SwitchDelay:
           Open: 0
           Close: 0
@@ -5738,93 +5571,13 @@ MonoBehaviour:
           m_PreInfinity: 2
           m_PostInfinity: 2
           m_RotationOrder: 4
-    - rid: 1524971439749595162
-      type: {class: SideAppearOnePanel, ns: DredPack.UIWindow.Animations, asm: DredPack.UIWindow}
+    - rid: 3854344985804013580
+      type: {class: Instantly, ns: DredPack.UIWindow.Animations, asm: DredPack.UIWindow}
       data:
-        Speed: 3
+        Speed: 1
         SwitchDelay:
           Open: 0
           Close: 0
-        OpenCurve:
-          serializedVersion: 2
-          m_Curve:
-          - serializedVersion: 3
-            time: 0
-            value: 0
-            inSlope: 2.821449
-            outSlope: 2.821449
-            tangentMode: 0
-            weightedMode: 0
-            inWeight: 0
-            outWeight: 0.03821656
-          - serializedVersion: 3
-            time: 1
-            value: 1
-            inSlope: 0
-            outSlope: 0
-            tangentMode: 0
-            weightedMode: 0
-            inWeight: 0
-            outWeight: 0
-          m_PreInfinity: 2
-          m_PostInfinity: 2
-          m_RotationOrder: 4
-        CloseCurve:
-          serializedVersion: 2
-          m_Curve:
-          - serializedVersion: 3
-            time: 0
-            value: 0
-            inSlope: 2.821449
-            outSlope: 2.821449
-            tangentMode: 0
-            weightedMode: 0
-            inWeight: 0
-            outWeight: 0.03821656
-          - serializedVersion: 3
-            time: 1
-            value: 1
-            inSlope: 0
-            outSlope: 0
-            tangentMode: 0
-            weightedMode: 0
-            inWeight: 0
-            outWeight: 0
-          m_PreInfinity: 2
-          m_PostInfinity: 2
-          m_RotationOrder: 4
-        OpenDirection: 1
-        CloseDirection: 0
-        CustomReferenceTransform: 0
-        ReferenceTransform: {fileID: 0}
-        Panel: {fileID: 472828008}
-        Graphics:
-          Curve:
-            serializedVersion: 2
-            m_Curve:
-            - serializedVersion: 3
-              time: 0
-              value: 0
-              inSlope: 0
-              outSlope: 0
-              tangentMode: 0
-              weightedMode: 0
-              inWeight: 0
-              outWeight: 0
-            - serializedVersion: 3
-              time: 1
-              value: 1
-              inSlope: 0
-              outSlope: 0
-              tangentMode: 0
-              weightedMode: 0
-              inWeight: 0
-              outWeight: 0
-            m_PreInfinity: 2
-            m_PostInfinity: 2
-            m_RotationOrder: 4
-          Graphics: []
-          CanvasGroups: []
 --- !u!225 &736352971
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -5877,6 +5630,44 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &736352974
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 736352968}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &736352975
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 736352968}
+  m_CullTransparentMesh: 1
 --- !u!1 &769038790
 GameObject:
   m_ObjectHideFlags: 0
@@ -6728,7 +6519,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SelectOnStart: 1
-  SelectOnStartIndex: 2
+  SelectOnStartIndex: 1
   WaitTime: 0
   Elements:
   - Window: {fileID: 23392514}
@@ -6953,11 +6744,60 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f417b7c71bee8864aaaa1084b82741ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AllTabs:
-  - rid: 1524971439749595144
-  - rid: 1524971439749595145
-  - rid: 1524971439749595146
-  - rid: 1524971439749595147
+  General:
+    window: {fileID: 0}
+    CurrentState: 2
+    StateOnAwakeMethod: 0
+    AnimationOnAwake: Instantly
+    StateOnAwake: 0
+    CloseButton: {fileID: 0}
+    OpenButton: {fileID: 0}
+    SwitchButton: {fileID: 0}
+    SelectObjectOnOpen: 0
+    AutoClose: 0
+    AutoCloseDelay: 2
+    Disableable: 0
+    EnableableCanvas: 0
+    EnableableRaycaster: 1
+    EnableableCanvasGroupInteractable: 1
+    EnableableCanvasGroupRaycasts: 1
+    CloseIfAnyWindowOpen: 0
+    CloseIfAnyWindowOpenType: 0
+    CloseOnOutsideClick: 0
+  Events:
+    window: {fileID: 0}
+    StartOpen:
+      m_PersistentCalls:
+        m_Calls: []
+    StartClose:
+      m_PersistentCalls:
+        m_Calls: []
+    StartSwitch:
+      m_PersistentCalls:
+        m_Calls: []
+    EndOpen:
+      m_PersistentCalls:
+        m_Calls: []
+    EndClose:
+      m_PersistentCalls:
+        m_Calls: []
+    EndSwitch:
+      m_PersistentCalls:
+        m_Calls: []
+    StateChanged:
+      m_PersistentCalls:
+        m_Calls: []
+  Animation:
+    window: {fileID: 0}
+    DualMode: 0
+    _currentOpenAnimationName: 
+    _currentOpenAnimation:
+      rid: -2
+    createdOpenAnimations: []
+    _currentCloseAnimationName: 
+    _currentCloseAnimation:
+      rid: -2
+    createdCloseAnimations: []
   Components:
     DisableableObject: {fileID: 912407592}
     Canvas: {fileID: 912407597}
@@ -6970,103 +6810,6 @@ MonoBehaviour:
     RefIds:
     - rid: -2
       type: {class: , ns: , asm: }
-    - rid: 1524971439749595144
-      type: {class: GeneralTab, ns: DredPack.UIWindow.Tabs, asm: DredPack.UIWindow}
-      data:
-        window: {fileID: 0}
-        CurrentState: 2
-        StateOnAwakeMethod: 0
-        AnimationOnAwake: Instantly
-        StateOnAwake: 0
-        CloseButton: {fileID: 0}
-        OpenButton: {fileID: 0}
-        SwitchButton: {fileID: 0}
-        SelectObjectOnOpen: 0
-        AutoClose: 0
-        AutoCloseDelay: 2
-        Disableable: 0
-        EnableableCanvas: 0
-        EnableableRaycaster: 1
-        EnableableCanvasGroupInteractable: 1
-        EnableableCanvasGroupRaycasts: 1
-        CloseIfAnyWindowOpen: 0
-        CloseIfAnyWindowOpenType: 0
-        CloseOnOutsideClick: 0
-    - rid: 1524971439749595145
-      type: {class: EventsTab, ns: DredPack.UIWindow.Tabs, asm: DredPack.UIWindow}
-      data:
-        window: {fileID: 0}
-        StartOpen:
-          m_PersistentCalls:
-            m_Calls: []
-        StartClose:
-          m_PersistentCalls:
-            m_Calls: []
-        StartSwitch:
-          m_PersistentCalls:
-            m_Calls: []
-        EndOpen:
-          m_PersistentCalls:
-            m_Calls: []
-        EndClose:
-          m_PersistentCalls:
-            m_Calls: []
-        EndSwitch:
-          m_PersistentCalls:
-            m_Calls: []
-        StateChanged:
-          m_PersistentCalls:
-            m_Calls: []
-    - rid: 1524971439749595146
-      type: {class: AudioTab, ns: DredPack.UIWindow.Tabs, asm: DredPack}
-      data:
-        window: {fileID: 0}
-        List: []
-    - rid: 1524971439749595147
-      type: {class: AnimationTab, ns: DredPack.UIWindow.Tabs, asm: DredPack.UIWindow}
-      data:
-        window: {fileID: 0}
-        DualMode: 0
-        _currentOpenAnimationName: Fade
-        _currentOpenAnimation:
-          rid: 1524971439749595148
-        createdOpenAnimations:
-        - rid: 1524971439749595148
-        _currentCloseAnimationName: Fade
-        _currentCloseAnimation:
-          rid: -2
-        createdCloseAnimations: []
-    - rid: 1524971439749595148
-      type: {class: Fade, ns: DredPack.UIWindow.Animations, asm: DredPack.UIWindow}
-      data:
-        Speed: 1
-        SwitchDelay:
-          Open: 0
-          Close: 0
-        Curve:
-          serializedVersion: 2
-          m_Curve:
-          - serializedVersion: 3
-            time: 0
-            value: 0
-            inSlope: 0
-            outSlope: 0
-            tangentMode: 0
-            weightedMode: 0
-            inWeight: 0
-            outWeight: 0
-          - serializedVersion: 3
-            time: 1
-            value: 1
-            inSlope: 0
-            outSlope: 0
-            tangentMode: 0
-            weightedMode: 0
-            inWeight: 0
-            outWeight: 0
-          m_PreInfinity: 2
-          m_PostInfinity: 2
-          m_RotationOrder: 4
 --- !u!225 &912407594
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -8434,14 +8177,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3d6cfdc0769bdb4aa5c9fb44896e8c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AudioGroups: []
-  AudioTypes:
-  - Type: Audio
-    Volume: 1
-    Enabled: 1
-  - Type: Music
-    Volume: 1
-    Enabled: 1
 --- !u!82 &1070550357
 AudioSource:
   m_ObjectHideFlags: 0
@@ -11296,6 +11031,8 @@ GameObject:
   - component: {fileID: 1546309317}
   - component: {fileID: 1546309316}
   - component: {fileID: 1546309315}
+  - component: {fileID: 1546309320}
+  - component: {fileID: 1546309319}
   m_Layer: 5
   m_Name: Window3
   m_TagString: Untagged
@@ -11335,493 +11072,112 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f417b7c71bee8864aaaa1084b82741ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AllTabs:
-  - rid: 1524971439749595149
-  - rid: 1524971439749595150
-  - rid: 1524971439749595151
-  - rid: 1524971439749595152
+  General:
+    window: {fileID: 0}
+    CurrentState: 2
+    StateOnAwakeMethod: 3
+    AnimationOnAwake: Instantly
+    StateOnAwake: 0
+    CloseButton: {fileID: 0}
+    OpenButton: {fileID: 0}
+    SwitchButton: {fileID: 0}
+    SelectObjectOnOpen: 0
+    AutoClose: 0
+    AutoCloseDelay: 2
+    Disableable: 0
+    EnableableCanvas: 0
+    EnableableRaycaster: 1
+    EnableableCanvasGroupInteractable: 1
+    EnableableCanvasGroupRaycasts: 1
+    CloseIfAnyWindowOpen: 0
+    CloseIfAnyWindowOpenType: 0
+    CloseOnOutsideClick: 0
+  Events:
+    window: {fileID: 0}
+    StartOpen:
+      m_PersistentCalls:
+        m_Calls: []
+    StartClose:
+      m_PersistentCalls:
+        m_Calls: []
+    StartSwitch:
+      m_PersistentCalls:
+        m_Calls: []
+    EndOpen:
+      m_PersistentCalls:
+        m_Calls: []
+    EndClose:
+      m_PersistentCalls:
+        m_Calls: []
+    EndSwitch:
+      m_PersistentCalls:
+        m_Calls: []
+    StateChanged:
+      m_PersistentCalls:
+        m_Calls: []
+  Animation:
+    window: {fileID: 0}
+    DualMode: 0
+    _currentOpenAnimationName: Fade
+    _currentOpenAnimation:
+      rid: 3854344985804013577
+    createdOpenAnimations:
+    - rid: 3854344985804013577
+    - rid: 3854344985804013581
+    _currentCloseAnimationName: Fade
+    _currentCloseAnimation:
+      rid: -2
+    createdCloseAnimations: []
   Components:
     DisableableObject: {fileID: 1546309313}
     Canvas: {fileID: 1546309318}
     Raycaster: {fileID: 1546309317}
-    BackgroundImage: {fileID: 0}
+    BackgroundImage: {fileID: 1546309319}
     CanvasGroup: {fileID: 1546309316}
     SelectableOnOpen: {fileID: 0}
   references:
     version: 2
     RefIds:
-    - rid: 1524971439749595149
-      type: {class: GeneralTab, ns: DredPack.UIWindow.Tabs, asm: DredPack.UIWindow}
+    - rid: -2
+      type: {class: , ns: , asm: }
+    - rid: 3854344985804013577
+      type: {class: Fade, ns: DredPack.UIWindow.Animations, asm: DredPack.UIWindow}
       data:
-        window: {fileID: 0}
-        CurrentState: 2
-        StateOnAwakeMethod: 0
-        AnimationOnAwake: Instantly
-        StateOnAwake: 1
-        CloseButton: {fileID: 0}
-        OpenButton: {fileID: 0}
-        SwitchButton: {fileID: 0}
-        SelectObjectOnOpen: 0
-        AutoClose: 0
-        AutoCloseDelay: 2
-        Disableable: 0
-        EnableableCanvas: 0
-        EnableableRaycaster: 1
-        EnableableCanvasGroupInteractable: 1
-        EnableableCanvasGroupRaycasts: 1
-        CloseIfAnyWindowOpen: 0
-        CloseIfAnyWindowOpenType: 0
-        CloseOnOutsideClick: 0
-    - rid: 1524971439749595150
-      type: {class: EventsTab, ns: DredPack.UIWindow.Tabs, asm: DredPack.UIWindow}
-      data:
-        window: {fileID: 0}
-        StartOpen:
-          m_PersistentCalls:
-            m_Calls: []
-        StartClose:
-          m_PersistentCalls:
-            m_Calls: []
-        StartSwitch:
-          m_PersistentCalls:
-            m_Calls: []
-        EndOpen:
-          m_PersistentCalls:
-            m_Calls: []
-        EndClose:
-          m_PersistentCalls:
-            m_Calls: []
-        EndSwitch:
-          m_PersistentCalls:
-            m_Calls: []
-        StateChanged:
-          m_PersistentCalls:
-            m_Calls: []
-    - rid: 1524971439749595151
-      type: {class: AudioTab, ns: DredPack.UIWindow.Tabs, asm: DredPack}
-      data:
-        window: {fileID: 0}
-        List: []
-    - rid: 1524971439749595152
-      type: {class: AnimationTab, ns: DredPack.UIWindow.Tabs, asm: DredPack.UIWindow}
-      data:
-        window: {fileID: 0}
-        DualMode: 0
-        _currentOpenAnimationName: Instantly
-        _currentOpenAnimation:
-          rid: 1524971439749595155
-        createdOpenAnimations:
-        - rid: 1524971439749595155
-        - rid: 1524971439749595156
-        - rid: 1524971439749595159
-        - rid: 1524971439749595160
-        - rid: 1524971439749595161
-        _currentCloseAnimationName: Fade
-        _currentCloseAnimation:
-          rid: 2179990328589942785
-        createdCloseAnimations:
-        - rid: 2179990328589942785
-    - rid: 1524971439749595155
+        Speed: 8
+        SwitchDelay:
+          Open: 0
+          Close: 0
+        Curve:
+          serializedVersion: 2
+          m_Curve:
+          - serializedVersion: 3
+            time: 0
+            value: 0
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0
+            outWeight: 0
+          - serializedVersion: 3
+            time: 1
+            value: 1
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0
+            outWeight: 0
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4
+    - rid: 3854344985804013581
       type: {class: Instantly, ns: DredPack.UIWindow.Animations, asm: DredPack.UIWindow}
       data:
         Speed: 1
         SwitchDelay:
           Open: 0
           Close: 0
-    - rid: 1524971439749595156
-      type: {class: Fade, ns: DredPack.UIWindow.Animations, asm: DredPack.UIWindow}
-      data:
-        Speed: 4
-        SwitchDelay:
-          Open: 0
-          Close: 0
-        Curve:
-          serializedVersion: 2
-          m_Curve:
-          - serializedVersion: 3
-            time: 0
-            value: 0
-            inSlope: 0
-            outSlope: 0
-            tangentMode: 0
-            weightedMode: 0
-            inWeight: 0
-            outWeight: 0
-          - serializedVersion: 3
-            time: 1
-            value: 1
-            inSlope: 0
-            outSlope: 0
-            tangentMode: 0
-            weightedMode: 0
-            inWeight: 0
-            outWeight: 0
-          m_PreInfinity: 2
-          m_PostInfinity: 2
-          m_RotationOrder: 4
-    - rid: 1524971439749595159
-      type: {class: SideAppear, ns: DredPack.UIWindow.Animations, asm: DredPack.UIWindow}
-      data:
-        Speed: 1
-        SwitchDelay:
-          Open: 0
-          Close: 0
-        Open:
-          Type: 1
-          Time: 0.6
-          Value: 20
-          CustomCurve:
-            serializedVersion: 2
-            m_Curve:
-            - serializedVersion: 3
-              time: 0
-              value: 0
-              inSlope: 4.574458
-              outSlope: 4.574458
-              tangentMode: 0
-              weightedMode: 0
-              inWeight: 0
-              outWeight: 0
-            - serializedVersion: 3
-              time: 0.6
-              value: 1.1
-              inSlope: 0
-              outSlope: 0
-              tangentMode: 0
-              weightedMode: 0
-              inWeight: 0
-              outWeight: 0
-            - serializedVersion: 3
-              time: 1
-              value: 1
-              inSlope: 0
-              outSlope: 0
-              tangentMode: 0
-              weightedMode: 0
-              inWeight: 0
-              outWeight: 0
-            m_PreInfinity: 2
-            m_PostInfinity: 2
-            m_RotationOrder: 4
-        Close:
-          Type: 0
-          Time: 0.6
-          Value: 20
-          CustomCurve:
-            serializedVersion: 2
-            m_Curve:
-            - serializedVersion: 3
-              time: 0
-              value: 1
-              inSlope: 0
-              outSlope: 0
-              tangentMode: 0
-              weightedMode: 0
-              inWeight: 0
-              outWeight: 0
-            - serializedVersion: 3
-              time: 0.6
-              value: 0
-              inSlope: 0
-              outSlope: 0
-              tangentMode: 0
-              weightedMode: 0
-              inWeight: 0
-              outWeight: 0
-            m_PreInfinity: 2
-            m_PostInfinity: 2
-            m_RotationOrder: 4
-        Up: []
-        Right: []
-        Down: []
-        Left: []
-        Graphics:
-          Curve:
-            serializedVersion: 2
-            m_Curve:
-            - serializedVersion: 3
-              time: 0
-              value: 0
-              inSlope: 0
-              outSlope: 0
-              tangentMode: 0
-              weightedMode: 0
-              inWeight: 0
-              outWeight: 0
-            - serializedVersion: 3
-              time: 1
-              value: 1
-              inSlope: 0
-              outSlope: 0
-              tangentMode: 0
-              weightedMode: 0
-              inWeight: 0
-              outWeight: 0
-            m_PreInfinity: 2
-            m_PostInfinity: 2
-            m_RotationOrder: 4
-          Graphics: []
-          CanvasGroups: []
-    - rid: 1524971439749595160
-      type: {class: SideAppearOnePanel, ns: DredPack.UIWindow.Animations, asm: DredPack.UIWindow}
-      data:
-        Speed: 3
-        SwitchDelay:
-          Open: 0
-          Close: 0
-        OpenCurve:
-          serializedVersion: 2
-          m_Curve:
-          - serializedVersion: 3
-            time: 0
-            value: 0
-            inSlope: 2.821449
-            outSlope: 2.821449
-            tangentMode: 0
-            weightedMode: 0
-            inWeight: 0
-            outWeight: 0.03821656
-          - serializedVersion: 3
-            time: 1
-            value: 1
-            inSlope: 0
-            outSlope: 0
-            tangentMode: 0
-            weightedMode: 0
-            inWeight: 0
-            outWeight: 0
-          m_PreInfinity: 2
-          m_PostInfinity: 2
-          m_RotationOrder: 4
-        CloseCurve:
-          serializedVersion: 2
-          m_Curve:
-          - serializedVersion: 3
-            time: 0
-            value: 0
-            inSlope: 2.821449
-            outSlope: 2.821449
-            tangentMode: 0
-            weightedMode: 0
-            inWeight: 0
-            outWeight: 0.03821656
-          - serializedVersion: 3
-            time: 1
-            value: 1
-            inSlope: 0
-            outSlope: 0
-            tangentMode: 0
-            weightedMode: 0
-            inWeight: 0
-            outWeight: 0
-          m_PreInfinity: 2
-          m_PostInfinity: 2
-          m_RotationOrder: 4
-        OpenDirection: 1
-        CloseDirection: 0
-        CustomReferenceTransform: 0
-        ReferenceTransform: {fileID: 1546309314}
-        Panel: {fileID: 1565129798}
-        Graphics:
-          Curve:
-            serializedVersion: 2
-            m_Curve:
-            - serializedVersion: 3
-              time: 0
-              value: 0
-              inSlope: 0
-              outSlope: 0
-              tangentMode: 0
-              weightedMode: 0
-              inWeight: 0
-              outWeight: 0
-            - serializedVersion: 3
-              time: 1
-              value: 1
-              inSlope: 0
-              outSlope: 0
-              tangentMode: 0
-              weightedMode: 0
-              inWeight: 0
-              outWeight: 0
-            m_PreInfinity: 2
-            m_PostInfinity: 2
-            m_RotationOrder: 4
-          Graphics: []
-          CanvasGroups: []
-    - rid: 1524971439749595161
-      type: {class: ScaledPopUp, ns: DredPack.UIWindow.Animations, asm: DredPack.UIWindow}
-      data:
-        Speed: 1
-        SwitchDelay:
-          Open: 0
-          Close: 0
-        ScaleOpenCurve:
-          serializedVersion: 2
-          m_Curve:
-          - serializedVersion: 3
-            time: 0
-            value: 0.5
-            inSlope: 0
-            outSlope: 0
-            tangentMode: 0
-            weightedMode: 0
-            inWeight: 0
-            outWeight: 0
-          - serializedVersion: 3
-            time: 0.5
-            value: 1.15
-            inSlope: 0
-            outSlope: 0
-            tangentMode: 0
-            weightedMode: 0
-            inWeight: 0
-            outWeight: 0
-          - serializedVersion: 3
-            time: 1
-            value: 1
-            inSlope: 0
-            outSlope: 0
-            tangentMode: 0
-            weightedMode: 0
-            inWeight: 0
-            outWeight: 0
-          m_PreInfinity: 2
-          m_PostInfinity: 2
-          m_RotationOrder: 4
-        ScaleCloseCurve:
-          serializedVersion: 2
-          m_Curve:
-          - serializedVersion: 3
-            time: 0
-            value: 1
-            inSlope: 0
-            outSlope: 0
-            tangentMode: 0
-            weightedMode: 0
-            inWeight: 0
-            outWeight: 0
-          - serializedVersion: 3
-            time: 0.6
-            value: 0.5
-            inSlope: 0
-            outSlope: 0
-            tangentMode: 0
-            weightedMode: 0
-            inWeight: 0
-            outWeight: 0
-          m_PreInfinity: 2
-          m_PostInfinity: 2
-          m_RotationOrder: 4
-        ScaledObject: {fileID: 0}
-        AlphaOpenCurve:
-          serializedVersion: 2
-          m_Curve:
-          - serializedVersion: 3
-            time: 0
-            value: 0
-            inSlope: 0
-            outSlope: 0
-            tangentMode: 0
-            weightedMode: 0
-            inWeight: 0
-            outWeight: 0
-          - serializedVersion: 3
-            time: 0.5
-            value: 1
-            inSlope: 0
-            outSlope: 0
-            tangentMode: 0
-            weightedMode: 0
-            inWeight: 0
-            outWeight: 0
-          m_PreInfinity: 2
-          m_PostInfinity: 2
-          m_RotationOrder: 4
-        AlphaCloseCurve:
-          serializedVersion: 2
-          m_Curve:
-          - serializedVersion: 3
-            time: 0
-            value: 1
-            inSlope: 0
-            outSlope: 0
-            tangentMode: 0
-            weightedMode: 0
-            inWeight: 0
-            outWeight: 0
-          - serializedVersion: 3
-            time: 0.5
-            value: 0
-            inSlope: 0
-            outSlope: 0
-            tangentMode: 0
-            weightedMode: 0
-            inWeight: 0
-            outWeight: 0
-          m_PreInfinity: 2
-          m_PostInfinity: 2
-          m_RotationOrder: 4
-        AlphaType: 0
-        Image: {fileID: 0}
-        GraphicModule:
-          Curve:
-            serializedVersion: 2
-            m_Curve:
-            - serializedVersion: 3
-              time: 0
-              value: 0
-              inSlope: 0
-              outSlope: 0
-              tangentMode: 0
-              weightedMode: 0
-              inWeight: 0
-              outWeight: 0
-            - serializedVersion: 3
-              time: 1
-              value: 1
-              inSlope: 0
-              outSlope: 0
-              tangentMode: 0
-              weightedMode: 0
-              inWeight: 0
-              outWeight: 0
-            m_PreInfinity: 2
-            m_PostInfinity: 2
-            m_RotationOrder: 4
-          Graphics: []
-          CanvasGroups: []
-    - rid: 2179990328589942785
-      type: {class: Fade, ns: DredPack.UIWindow.Animations, asm: DredPack.UIWindow}
-      data:
-        Speed: 1
-        SwitchDelay:
-          Open: 0
-          Close: 0
-        Curve:
-          serializedVersion: 2
-          m_Curve:
-          - serializedVersion: 3
-            time: 0
-            value: 0
-            inSlope: 0
-            outSlope: 0
-            tangentMode: 0
-            weightedMode: 0
-            inWeight: 0
-            outWeight: 0
-          - serializedVersion: 3
-            time: 1
-            value: 1
-            inSlope: 0
-            outSlope: 0
-            tangentMode: 0
-            weightedMode: 0
-            inWeight: 0
-            outWeight: 0
-          m_PreInfinity: 2
-          m_PostInfinity: 2
-          m_RotationOrder: 4
 --- !u!225 &1546309316
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -11874,6 +11230,44 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &1546309319
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1546309313}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1546309320
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1546309313}
+  m_CullTransparentMesh: 1
 --- !u!1 &1547904230
 GameObject:
   m_ObjectHideFlags: 0

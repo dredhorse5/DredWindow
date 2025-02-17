@@ -123,6 +123,10 @@ namespace DredPack.UIWindow.Tabs
 
         #endregion
 
+        #region Close on outside click
+
+        
+        
         public void CheckOutsideClick()
         {
             if (CloseOnOutsideClick && CurrentState == StatesRead.Opened)
@@ -142,6 +146,15 @@ namespace DredPack.UIWindow.Tabs
                 }
             }
         }
+        
+        
+        
+        #endregion
+
+        #region AutoClose
+
+        
+
 
         private Coroutine autoCloseCor;
 
@@ -164,5 +177,10 @@ namespace DredPack.UIWindow.Tabs
                 window.Close();
             }
         }
+        
+        
+        
+        
+        #endregion
     }
 }

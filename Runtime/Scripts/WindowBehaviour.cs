@@ -1,6 +1,7 @@
 using System;
 using DredPack.UIWindow;
 using DredPack.UIWindow.Animations;
+using DredPack.UIWindow.TNRD.Autohook;
 using UnityEngine;
 
 namespace DredPack.UIWindow
@@ -8,25 +9,19 @@ namespace DredPack.UIWindow
     [RequireComponent(typeof(Window))]
     public class WindowBehaviour : MonoBehaviour, IWindow, IWindowCallback
     {
+        [AutoHook]
         public Window Window;
 
-        protected virtual void OnEnable()
-        {
-            Window.RegisterCallback(this);
-        }
-
-        protected virtual void OnDisable()
-        {
-            Window.RemoveCallback(this);
-        }
+        protected virtual void OnEnable() => Window.RegisterCallback(this);
+        protected virtual void OnDisable() => Window.RemoveCallback(this);
 
 
-        
-        
-        
 
 
-        
+
+
+
+
         public virtual void OnStartOpen() { }
         public virtual void OnStartClose() { }
         public virtual void OnStartSwitch(bool state) { }
